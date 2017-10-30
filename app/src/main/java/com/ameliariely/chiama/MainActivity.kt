@@ -46,16 +46,5 @@ class MainActivity : AppCompatActivity() {
         val pendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         val task = activityRecognitionClient.requestActivityUpdates(300, pendingIntent)
 
-        val id = "walking_channel"
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            // The user-visible name of the channel.
-            val name = getString(R.string.walking_channel)
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val mChannel = NotificationChannel(id, name, importance)
-            mChannel.setShowBadge(false)
-            val mNotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            mNotificationManager.createNotificationChannel(mChannel)
-        }
     }
 }
