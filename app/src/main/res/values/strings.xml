@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Chiama</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="walking_channel">Walking notifications</string>
+    <string name="send_sms">Send Sms</string>
+    <string name="primary_channel">Primary Channel</string>
 </resources>

@@ -1,16 +1,17 @@
 package com.ameliariely.chiama
 
 import android.app.IntentService
+import android.app.PendingIntent
 import android.content.Intent
+import android.net.Uri
 import android.support.v4.app.NotificationManagerCompat
 import android.util.Log
 import com.google.android.gms.location.ActivityRecognitionResult
 import com.google.android.gms.location.DetectedActivity
 
-
 class ActivityRecognitionService : IntentService {
 
-    private lateinit var notifcationHelper : NotificationHelper
+    private lateinit var notifcationHelper: NotificationHelper
 
     constructor() : super("ActivityRecognitionService")
 
@@ -66,6 +67,10 @@ class ActivityRecognitionService : IntentService {
 
     private fun sendNotification() {
         val builder = notifcationHelper.getNotificationPrimary("Walking", "Tap to text mom that you're free.")
+        val smsIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("smsto", "9192604264", null))
+        smsIntent.putExtra("sms_body", "Hey! Amelia is walking and free to talk.\n This message is sent from the ChiamaMamma app.")
+        val pendingSmsIntent = PendingIntent.getActivity(applicationContext, 0, smsIntent, 0)
+        builder.setContentIntent(pendingSmsIntent)
         NotificationManagerCompat.from(this).notify(0, builder.build())
     }
 }

@@ -15,13 +15,13 @@ Inspired by {@linktourl https://github.com/googlesamples/android-NotificationCha
 class NotificationHelper(context: Context) : ContextWrapper(context) {
 
     private var manager: NotificationManager? = null
-    val PRIMARY_CHANNEL = "default"
+    private val PRIMARY_CHANNEL = "primary_channel"
 
     init {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // The user-visible name of the channel.
-            val name = getString(R.string.walking_channel)
+            val name = getString(R.string.primary_channel)
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val mChannel = NotificationChannel(PRIMARY_CHANNEL, name, importance)
             mChannel.setShowBadge(false)
