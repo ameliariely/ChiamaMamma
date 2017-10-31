@@ -1,21 +1,25 @@
 package com.ameliariely.chiama
 
-import android.content.Intent
 import android.app.IntentService
+import android.content.Intent
+import android.support.v4.app.NotificationManagerCompat
 import android.util.Log
 import com.google.android.gms.location.ActivityRecognitionResult
 import com.google.android.gms.location.DetectedActivity
-import android.support.v4.app.NotificationManagerCompat
-import android.support.v4.app.NotificationCompat
 
 
 class ActivityRecognitionService : IntentService {
+
+    private lateinit var notifcationHelper : NotificationHelper
 
     constructor() : super("ActivityRecognitionService")
 
     constructor(name: String) : super(name)
 
-    private val notifcationHelper = NotificationHelper(applicationContext)
+    override fun onCreate() {
+        super.onCreate()
+        notifcationHelper = NotificationHelper(applicationContext)
+    }
 
     override fun onHandleIntent(intent: Intent?) {
         if (!ActivityRecognitionResult.hasResult(intent)) {
@@ -61,13 +65,7 @@ class ActivityRecognitionService : IntentService {
     }
 
     private fun sendNotification() {
-        //  The id of the channel.
-        val id = notifcationHelper.PRIMARY_CHANNEL
-
-        val builder = NotificationCompat.Builder(this, id)
-        builder.setContentText("Are you walking?")
-        builder.setSmallIcon(R.mipmap.ic_launcher)
-        builder.setContentTitle(getString(R.string.app_name))
+        val builder = notifcationHelper.getNotificationPrimary("Walking", "Tap to text mom that you're free.")
         NotificationManagerCompat.from(this).notify(0, builder.build())
     }
 }

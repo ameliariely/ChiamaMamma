@@ -54,6 +54,7 @@ class NotificationHelper(context: Context) : ContextWrapper(context) {
     fun getNotificationPrimary(title: String, body: String): NotificationCompat.Builder {
         return NotificationCompat.Builder(applicationContext, PRIMARY_CHANNEL)
                 .setContentTitle(title)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentText(body)
                 .setAutoCancel(true)
     }
