@@ -1,28 +1,24 @@
 package com.ameliariely.chiama
 
-import android.app.IntentService
 import android.app.PendingIntent
 import android.content.Intent
 import android.net.Uri
+import android.support.v4.app.JobIntentService
 import android.support.v4.app.NotificationManagerCompat
 import android.util.Log
 import com.google.android.gms.location.ActivityRecognitionResult
 import com.google.android.gms.location.DetectedActivity
 
-class ActivityRecognitionService : IntentService {
+class ActivityRecognitionService : JobIntentService() {
 
     private lateinit var notifcationHelper: NotificationHelper
-
-    constructor() : super("ActivityRecognitionService")
-
-    constructor(name: String) : super(name)
 
     override fun onCreate() {
         super.onCreate()
         notifcationHelper = NotificationHelper(applicationContext)
     }
 
-    override fun onHandleIntent(intent: Intent?) {
+    override fun onHandleWork(intent: Intent) {
         if (!ActivityRecognitionResult.hasResult(intent)) {
             return
         }
