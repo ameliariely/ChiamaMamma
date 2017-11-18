@@ -7,7 +7,7 @@ class SplashViewModel : BaseViewModel<SplashNavigator>() {
     fun navigateToNextActivity() {
         if (true) {
             //TODO if app has never been opened
-            navigator?.openSetUpActivity()
+            navigator?.openOnboardingActivity()
         } else {
             navigator?.openMainActivity()
         }

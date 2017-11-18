@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Chiama</string>
-    <string name="send_sms">Send Sms</string>
+    <string name="app_name">Call Mom</string>
     <string name="primary_channel">Primary Channel</string>
+    <string name="inOnboarding">inOnboarding</string>
 </resources>

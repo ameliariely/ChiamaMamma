@@ -1,16 +1,19 @@
 package com.ameliariely.chiama.splash
 
 import com.ameliariely.chiama.base.BaseViewModel
+import com.ameliariely.chiama.movementChooser.MovementChooserNavigator
 
-class MovementChooserViewModel : BaseViewModel<SplashNavigator>() {
+class MovementChooserViewModel : BaseViewModel<MovementChooserNavigator>() {
 
     fun navigateToNextActivity() {
-        if (true) {
-            //TODO if app has never been opened
+        if (inOnboarding) {
+            //TODO if in onboarding
             navigator?.openSetUpActivity()
         } else {
             navigator?.openMainActivity()
         }
     }
+
+    var inOnboarding = false
 
 }

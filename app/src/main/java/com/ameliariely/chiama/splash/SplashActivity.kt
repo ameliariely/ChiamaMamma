@@ -9,9 +9,9 @@ import com.ameliariely.chiama.R
 import com.ameliariely.chiama.base.BaseActivity
 
 
-class SplashActivity : BaseActivity<ViewDataBinding, MovementChooserViewModel>(), SplashNavigator {
+class SplashActivity : BaseActivity<ViewDataBinding, SplashViewModel>(), SplashNavigator {
 
-    override var viewModel: MovementChooserViewModel = MovementChooserViewModel()
+    override var viewModel: SplashViewModel = SplashViewModel()
 
     override val layoutId = R.layout.activity_splash
 
@@ -23,9 +23,10 @@ class SplashActivity : BaseActivity<ViewDataBinding, MovementChooserViewModel>()
         viewModel.navigateToNextActivity()
     }
 
-    override fun openSetUpActivity() {
+    override fun openOnboardingActivity() {
         //TODO make new activity
-        val intent = Intent(applicationContext, MainActivity::class.java)
+        val intent = Intent(applicationContext, MovementChooserActivity::class.java)
+        intent.putExtra(resources.getString(R.string.inOnboarding), true)
         startActivity(intent)
         finish()
     }

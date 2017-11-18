@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.ameliariely.chiama.splash.MovementChooserViewModel" />
+            type="com.ameliariely.chiama.movementChooser.MovementChooserNavigator" />
 
     </data>
 

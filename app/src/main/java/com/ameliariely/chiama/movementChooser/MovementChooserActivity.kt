@@ -3,26 +3,29 @@ package com.ameliariely.chiama.splash
 import android.content.Intent
 import android.databinding.ViewDataBinding
 import android.os.Bundle
-import android.util.Log
 import com.ameliariely.chiama.BR
 import com.ameliariely.chiama.MainActivity
 import com.ameliariely.chiama.R
+import com.ameliariely.chiama.R.layout.activity_movement_chooser
 import com.ameliariely.chiama.base.BaseActivity
+import com.ameliariely.chiama.movementChooser.MovementChooserNavigator
 
 
-class MovementChooserActivity : BaseActivity<ViewDataBinding, MovementChooserViewModel>(), SplashNavigator {
+class MovementChooserActivity : BaseActivity<ViewDataBinding, MovementChooserViewModel>(), MovementChooserNavigator {
 
     override var viewModel: MovementChooserViewModel = MovementChooserViewModel()
 
-    override val layoutId = R.layout.activity_movement_chooser
+    override val layoutId = activity_movement_chooser
 
     override val bindingVariable = BR.viewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.navigator = this
-        viewModel.navigateToNextActivity()
-        Log.i("amelia", "I splashed!")
+        //TODO doublecheck if this gets the right intent
+        //TODO add a datamanager to give this too
+        viewModel.inOnboarding = intent.getBooleanExtra(
+                resources.getString(R.string.inOnboarding), false)
     }
 
     override fun openSetUpActivity() {
