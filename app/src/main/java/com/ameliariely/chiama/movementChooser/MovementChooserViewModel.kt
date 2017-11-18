@@ -15,5 +15,14 @@ class MovementChooserViewModel : BaseViewModel<MovementChooserNavigator>() {
     }
 
     var inOnboarding = false
+    var walkingSelected = false
+    var drivingSelected = false
 
+    fun toggleWalkingSeleted() {
+        walkingSelected = !walkingSelected
+    }
+
+    fun toggleDrivingSeleted() {
+        drivingSelected = !drivingSelected
+    }
 }

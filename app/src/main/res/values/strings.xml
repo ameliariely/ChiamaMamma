@@ -2,4 +2,6 @@
     <string name="app_name">Call Mom</string>
     <string name="primary_channel">Primary Channel</string>
     <string name="inOnboarding">inOnboarding</string>
+    <string name="while_walking">While walking</string>
+    <string name="while_driving">While driving</string>
 </resources>
