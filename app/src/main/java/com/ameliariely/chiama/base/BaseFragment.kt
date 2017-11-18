@@ -13,9 +13,11 @@ import android.view.ViewGroup
 abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel<*>> : Fragment() {
 
     var baseActivity: BaseActivity<*, *>? = null
-    var viewDataBinding: T? = null
+    //TODO does this need to be nullable?
+    lateinit var viewDataBinding: T
+    //TODO make these abstract
     private var mViewModel: V? = null
-    private var mRootView: View? = null
+    lateinit var mRootView: View
 
     /**
      * Override for set view model
@@ -46,22 +48,21 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel<*>> : Fragmen
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         viewDataBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-        mRootView = viewDataBinding!!.root
+        mRootView = viewDataBinding.root
         return mRootView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewDataBinding!!.setVariable(bindingVariable, mViewModel)
-        viewDataBinding!!.executePendingBindings()
+        viewDataBinding.setVariable(bindingVariable, mViewModel)
+        viewDataBinding.executePendingBindings()
     }
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
         if (context is BaseActivity<*, *>) {
-            val activity = context as BaseActivity<*, *>?
-            this.baseActivity = activity
-            activity!!.onFragmentAttached()
+            this.baseActivity = context
+            baseActivity!!.onFragmentAttached()
         }
     }
 
