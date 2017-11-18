@@ -4,6 +4,6 @@ import android.app.Application
 
 class CallMomApp : Application() {
 
-//    val dataManager = DataManager()
+    val dataManager = DataManager()
 
 }
