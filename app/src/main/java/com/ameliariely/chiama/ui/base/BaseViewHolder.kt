@@ -1,4 +1,4 @@
-package com.ameliariely.chiama.base
+package com.ameliariely.chiama.ui.base
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

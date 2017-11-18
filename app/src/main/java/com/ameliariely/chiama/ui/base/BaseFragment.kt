@@ -1,4 +1,4 @@
-package com.ameliariely.chiama.base
+package com.ameliariely.chiama.ui.base
 
 import android.content.Context
 import android.databinding.DataBindingUtil

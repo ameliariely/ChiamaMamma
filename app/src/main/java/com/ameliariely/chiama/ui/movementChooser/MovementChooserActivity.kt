@@ -1,4 +1,4 @@
-package com.ameliariely.chiama.splash
+package com.ameliariely.chiama.ui.splash
 
 import android.content.Intent
 import android.databinding.ViewDataBinding
@@ -8,8 +8,8 @@ import com.ameliariely.chiama.CallMomApp
 import com.ameliariely.chiama.MainActivity
 import com.ameliariely.chiama.R
 import com.ameliariely.chiama.R.layout.activity_movement_chooser
-import com.ameliariely.chiama.base.BaseActivity
-import com.ameliariely.chiama.movementChooser.MovementChooserNavigator
+import com.ameliariely.chiama.ui.base.BaseActivity
+import com.ameliariely.chiama.ui.movementChooser.MovementChooserNavigator
 
 
 class MovementChooserActivity : BaseActivity<ViewDataBinding, MovementChooserViewModel>(), MovementChooserNavigator {
@@ -45,3 +45,5 @@ class MovementChooserActivity : BaseActivity<ViewDataBinding, MovementChooserVie
     }
 
 }
+
+

@@ -1,4 +1,4 @@
-package com.ameliariely.chiama.splash
+package com.ameliariely.chiama.ui.splash
 
 import android.content.Intent
 import android.databinding.ViewDataBinding
@@ -7,7 +7,7 @@ import com.ameliariely.chiama.BR
 import com.ameliariely.chiama.CallMomApp
 import com.ameliariely.chiama.MainActivity
 import com.ameliariely.chiama.R
-import com.ameliariely.chiama.base.BaseActivity
+import com.ameliariely.chiama.ui.base.BaseActivity
 
 
 class SplashActivity : BaseActivity<ViewDataBinding, SplashViewModel>(), SplashNavigator {

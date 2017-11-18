@@ -1,9 +1,9 @@
-package com.ameliariely.chiama.splash
+package com.ameliariely.chiama.ui.splash
 
 import android.databinding.ObservableBoolean
 import com.ameliariely.chiama.DataManager
-import com.ameliariely.chiama.base.BaseViewModel
-import com.ameliariely.chiama.movementChooser.MovementChooserNavigator
+import com.ameliariely.chiama.ui.base.BaseViewModel
+import com.ameliariely.chiama.ui.movementChooser.MovementChooserNavigator
 
 class MovementChooserViewModel(override val dataManager: DataManager) : BaseViewModel<MovementChooserNavigator>() {
 
