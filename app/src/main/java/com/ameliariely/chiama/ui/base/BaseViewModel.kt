@@ -1,6 +1,6 @@
 package com.ameliariely.chiama.ui.base
 
-import com.ameliariely.chiama.DataManager
+import com.ameliariely.chiama.data.DataManager
 
 
 abstract class BaseViewModel<N> {

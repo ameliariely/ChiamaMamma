@@ -5,7 +5,7 @@ import android.databinding.ViewDataBinding
 import android.os.Bundle
 import com.ameliariely.chiama.BR
 import com.ameliariely.chiama.CallMomApp
-import com.ameliariely.chiama.MainActivity
+import com.ameliariely.chiama.ui.main.MainActivity
 import com.ameliariely.chiama.R
 import com.ameliariely.chiama.ui.base.BaseActivity
 

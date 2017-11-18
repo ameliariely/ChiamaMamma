@@ -1,4 +1,4 @@
-package com.ameliariely.chiama.prefs
+package com.ameliariely.chiama.data.prefs
 
 import android.content.Context
 

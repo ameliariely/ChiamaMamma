@@ -1,7 +1,7 @@
 package com.ameliariely.chiama.ui.splash
 
 import android.databinding.ObservableBoolean
-import com.ameliariely.chiama.DataManager
+import com.ameliariely.chiama.data.DataManager
 import com.ameliariely.chiama.ui.base.BaseViewModel
 import com.ameliariely.chiama.ui.movementChooser.MovementChooserNavigator
 

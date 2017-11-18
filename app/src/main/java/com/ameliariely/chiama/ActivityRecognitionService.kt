@@ -6,6 +6,7 @@ import android.net.Uri
 import android.support.v4.app.JobIntentService
 import android.support.v4.app.NotificationManagerCompat
 import android.util.Log
+import com.ameliariely.chiama.utils.NotificationHelper
 import com.google.android.gms.location.ActivityRecognitionResult
 import com.google.android.gms.location.DetectedActivity
 

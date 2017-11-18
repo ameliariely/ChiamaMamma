@@ -1,4 +1,4 @@
-package com.ameliariely.chiama
+package com.ameliariely.chiama.utils
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.ContextWrapper
 import android.os.Build
 import android.support.v4.app.NotificationCompat
+import com.ameliariely.chiama.R
 
 
 /**

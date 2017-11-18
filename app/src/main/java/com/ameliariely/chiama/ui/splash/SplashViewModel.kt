@@ -1,6 +1,6 @@
 package com.ameliariely.chiama.ui.splash
 
-import com.ameliariely.chiama.DataManager
+import com.ameliariely.chiama.data.DataManager
 import com.ameliariely.chiama.ui.base.BaseViewModel
 
 class SplashViewModel(override val dataManager: DataManager) : BaseViewModel<SplashNavigator>() {
