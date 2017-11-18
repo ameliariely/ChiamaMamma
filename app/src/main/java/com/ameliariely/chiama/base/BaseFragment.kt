@@ -15,46 +15,28 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel<*>> : Fragmen
     var baseActivity: BaseActivity<*, *>? = null
     //TODO does this need to be nullable?
     lateinit var viewDataBinding: T
-    //TODO make these abstract
-    private var mViewModel: V? = null
-    lateinit var mRootView: View
-
-    /**
-     * Override for set view model
-     *
-     * @return view model instance
-     */
+    lateinit var rootView: View
     abstract val viewModel: V
-
-    /**
-     * Override for set binding variable
-     *
-     * @return variable id
-     */
     abstract val bindingVariable: Int
 
-    /**
-     * @return layout resource id
-     */
     @get:LayoutRes
     abstract val layoutId: Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mViewModel = viewModel
         setHasOptionsMenu(false)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         viewDataBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-        mRootView = viewDataBinding.root
-        return mRootView
+        rootView = viewDataBinding.root
+        return rootView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewDataBinding.setVariable(bindingVariable, mViewModel)
+        viewDataBinding.setVariable(bindingVariable, viewModel)
         viewDataBinding.executePendingBindings()
     }
 
