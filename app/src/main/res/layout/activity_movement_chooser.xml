@@ -28,16 +28,20 @@
             android:layout_height="wrap_content"
             android:checked="@{viewModel.walkingSelected}"
             android:hint="@string/while_walking"
-            android:onCheckedChanged="@{viewModel.toggleWalkingSelected}"
             tools:hint="Walking" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onCheckedChanged="@{viewModel.toggleDrivingSelected}"
             android:checked="@{viewModel.drivingSelected}"
             android:hint="@string/while_driving"
             tools:hint="Driving" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.onSubmitClicked()}"
+            android:text="@string/sumbit"/>
 
     </LinearLayout>
 </layout>

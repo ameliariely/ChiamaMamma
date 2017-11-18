@@ -24,8 +24,10 @@ class MovementChooserActivity : BaseActivity<ViewDataBinding, MovementChooserVie
         viewModel.navigator = this
         //TODO doublecheck if this gets the right intent
         //TODO add a datamanager to give this too
-        viewModel.inOnboarding = intent.getBooleanExtra(
-                resources.getString(R.string.inOnboarding), false)
+        viewModel.inOnboarding.set(
+                intent.getBooleanExtra(
+                        resources.getString(R.string.inOnboarding),
+                        false))
     }
 
     override fun openSetUpActivity() {
