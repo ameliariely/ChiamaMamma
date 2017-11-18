@@ -4,6 +4,7 @@ import android.content.Intent
 import android.databinding.ViewDataBinding
 import android.os.Bundle
 import com.ameliariely.chiama.BR
+import com.ameliariely.chiama.CallMomApp
 import com.ameliariely.chiama.MainActivity
 import com.ameliariely.chiama.R
 import com.ameliariely.chiama.base.BaseActivity
@@ -11,7 +12,7 @@ import com.ameliariely.chiama.base.BaseActivity
 
 class SplashActivity : BaseActivity<ViewDataBinding, SplashViewModel>(), SplashNavigator {
 
-    override var viewModel: SplashViewModel = SplashViewModel()
+    override var viewModel: SplashViewModel = SplashViewModel((application as CallMomApp).dataManager)
 
     override val layoutId = R.layout.activity_splash
 

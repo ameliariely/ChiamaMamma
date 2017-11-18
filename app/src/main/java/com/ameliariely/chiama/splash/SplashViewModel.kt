@@ -1,8 +1,9 @@
 package com.ameliariely.chiama.splash
 
+import com.ameliariely.chiama.DataManager
 import com.ameliariely.chiama.base.BaseViewModel
 
-class SplashViewModel : BaseViewModel<SplashNavigator>() {
+class SplashViewModel(override val dataManager: DataManager) : BaseViewModel<SplashNavigator>() {
 
     fun navigateToNextActivity() {
         if (true) {

@@ -1,10 +1,11 @@
 package com.ameliariely.chiama.splash
 
 import android.databinding.ObservableBoolean
+import com.ameliariely.chiama.DataManager
 import com.ameliariely.chiama.base.BaseViewModel
 import com.ameliariely.chiama.movementChooser.MovementChooserNavigator
 
-class MovementChooserViewModel : BaseViewModel<MovementChooserNavigator>() {
+class MovementChooserViewModel(override val dataManager: DataManager) : BaseViewModel<MovementChooserNavigator>() {
 
     private fun navigateToNextActivity() {
         if (inOnboarding.get()) {

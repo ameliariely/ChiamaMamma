@@ -4,6 +4,7 @@ import android.content.Intent
 import android.databinding.ViewDataBinding
 import android.os.Bundle
 import com.ameliariely.chiama.BR
+import com.ameliariely.chiama.CallMomApp
 import com.ameliariely.chiama.MainActivity
 import com.ameliariely.chiama.R
 import com.ameliariely.chiama.R.layout.activity_movement_chooser
@@ -13,7 +14,7 @@ import com.ameliariely.chiama.movementChooser.MovementChooserNavigator
 
 class MovementChooserActivity : BaseActivity<ViewDataBinding, MovementChooserViewModel>(), MovementChooserNavigator {
 
-    override var viewModel: MovementChooserViewModel = MovementChooserViewModel()
+    override var viewModel: MovementChooserViewModel = MovementChooserViewModel((application as CallMomApp).dataManager)
 
     override val layoutId = activity_movement_chooser
 
