@@ -1,7 +1,6 @@
 package com.ameliariely.chiama.data
 
 import android.content.Context
-import com.ameliariely.chiama.data.prefs.PreferencesHelper
 
 interface DataManager {
 
