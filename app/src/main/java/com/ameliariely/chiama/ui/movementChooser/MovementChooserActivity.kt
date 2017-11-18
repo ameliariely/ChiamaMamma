@@ -5,12 +5,10 @@ import android.databinding.ViewDataBinding
 import android.os.Bundle
 import com.ameliariely.chiama.BR
 import com.ameliariely.chiama.CallMomApp
-import com.ameliariely.chiama.ui.main.MainActivity
 import com.ameliariely.chiama.R
 import com.ameliariely.chiama.R.layout.activity_movement_chooser
 import com.ameliariely.chiama.ui.base.BaseActivity
-import com.ameliariely.chiama.ui.movementChooser.MovementChooserNavigator
-
+import com.ameliariely.chiama.ui.main.MainActivity
 
 class MovementChooserActivity : BaseActivity<ViewDataBinding, MovementChooserViewModel>(), MovementChooserNavigator {
 
@@ -45,5 +43,13 @@ class MovementChooserActivity : BaseActivity<ViewDataBinding, MovementChooserVie
     }
 
 }
+
+interface MovementChooserNavigator {
+
+    fun openSetUpActivity()
+    fun openMainActivity()
+
+}
+
 
 
